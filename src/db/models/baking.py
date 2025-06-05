@@ -7,7 +7,7 @@ class BakeDetails(Base):
     __tablename__ = 'bake_details'
 
     id = Column(Integer, primary_key=True)
-    recipe_id = Column(Integer, ForeignKey('recipes.id'))
+    recipe_id = Column(Integer, ForeignKey('recipe.id'))
 
     oven_model = Column(String)
     average_insert_temp = Column(Float)

@@ -4,26 +4,26 @@ from src.db.database import Base
 
 
 class Ball(Base):
-    __tablename__ = 'balls'
+    __tablename__ = 'ball'
 
     id = Column(Integer, primary_key=True)
-    recipe_id = Column(Integer, ForeignKey('recipes.id'))
+    recipe_id = Column(Integer, ForeignKey('recipe.id'))
     ball_number = Column(Integer, nullable=False)
 
-    sauce_id = Column(Integer, ForeignKey('sauces.id'), nullable=True)
-    taste_score = Column(Float, nullable=True)
+    sauce_id = Column(Integer, ForeignKey('sauce.id'), nullable=True)
+    # taste_score = Column(Float, nullable=True)
 
     recipe = relationship("Recipe", back_populates="balls")
     sauce = relationship("Sauce")
-    toppings = relationship("BallTopping", back_populates="ball")
+    topping = relationship("BallTopping", back_populates="ball")
 
 
 class BallTopping(Base):
-    __tablename__ = 'ball_toppings'
+    __tablename__ = 'ball_topping'
 
     id = Column(Integer, primary_key=True)
-    ball_id = Column(Integer, ForeignKey('balls.id'))
-    topping_id = Column(Integer, ForeignKey('toppings.id'))
+    ball_id = Column(Integer, ForeignKey('ball.id'))
+    topping_id = Column(Integer, ForeignKey('topping.id'))
 
-    ball = relationship("Ball", back_populates="toppings")
+    ball = relationship("Ball", back_populates="topping")
     topping = relationship("Topping")

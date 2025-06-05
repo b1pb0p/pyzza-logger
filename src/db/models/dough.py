@@ -7,7 +7,7 @@ class DoughObservation(Base):
     __tablename__ = 'dough_observations'
 
     id = Column(Integer, primary_key=True)
-    recipe_id = Column(Integer, ForeignKey('recipes.id'))
+    recipe_id = Column(Integer, ForeignKey('recipe.id'))
 
     stickiness = Column(Float)
     firmness = Column(Float)

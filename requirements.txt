@@ -1,1 +1,2 @@
 sqlalchemy~=2.0.40
+PyQt6~=6.9.0

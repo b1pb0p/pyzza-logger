@@ -7,7 +7,7 @@ class Proofing(Base):
     __tablename__ = 'proofing'
 
     id = Column(Integer, primary_key=True)
-    recipe_id = Column(Integer, ForeignKey('recipes.id'))
+    recipe_id = Column(Integer, ForeignKey('recipe.id'))
 
     stage = Column(String)
     temperature = Column(Float)
@@ -17,10 +17,10 @@ class Proofing(Base):
 
 
 class TimeLog(Base):
-    __tablename__ = 'time_logs'
+    __tablename__ = 'time_log'
 
     id = Column(Integer, primary_key=True)
-    recipe_id = Column(Integer, ForeignKey('recipes.id'))
+    recipe_id = Column(Integer, ForeignKey('recipe.id'))
 
     start_time = Column(DateTime)
     end_time = Column(DateTime)
@@ -30,10 +30,10 @@ class TimeLog(Base):
 
 
 class TemperatureLog(Base):
-    __tablename__ = 'temperature_logs'
+    __tablename__ = 'temperature_log'
 
     id = Column(Integer, primary_key=True)
-    recipe_id = Column(Integer, ForeignKey('recipes.id'))
+    recipe_id = Column(Integer, ForeignKey('recipe.id'))
 
     room_temp = Column(Float)
     water_temp = Column(Float)

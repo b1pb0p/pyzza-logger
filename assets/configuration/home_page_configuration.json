@@ -1,0 +1,13 @@
+{
+  "window_title": "Pyzza Logger",
+  "window_icon_path": "icons\\pizza_small.ico",
+  "background_image_path": "pictures\\background.png",
+  "image_factor_ratio": 0.5,
+  "half_scale_button_positions": {
+    "query_button_positions": [183, 412],
+    "add_button_positions": [310, 413],
+    "edit_button_positions": [53, 413],
+    "about_button_positions": [120, 452],
+    "button_size": [120, 30]
+  }
+}
